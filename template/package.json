@@ -1,0 +1,59 @@
+{
+  "name": "{{ componentName }}",
+  "version": "1.0.0",
+  "description": "{{ description }}",
+  "main": "./dist/{{ componentName }}.js",
+  "module": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run build --dev",
+    "build": "node ./build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+  ],
+  "author": "{{ author }}",
+  "license": "{{ license }}",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    {{#if_eq cssPreProcessor "less"}}
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    {{/if_eq}}
+    {{#if_eq cssPreProcessor "sass"}}
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    {{/if_eq}}
+    {{#lint}}
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-html": "^3.0.0",
+    {{/lint}}
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "vue-loader": "^14.0.3",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.2",
+    "webpack-merge": "^4.1.1"
+  }
+}
